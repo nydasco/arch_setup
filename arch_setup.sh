@@ -12,3 +12,9 @@ sudo pacman -S firefox --needed
 
 cd /usr/aur && git clone https://aur.archlinux.org/nomachine.git
 cd nomachine && makepkg -si
+
+cd /usr/aur && git clone https://aur.archlinux.org/polybar.git
+cd polybar && makepkg -si
+
+sudo pacman -S xorg-fonts-misc
+
