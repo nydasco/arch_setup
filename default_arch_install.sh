@@ -50,7 +50,7 @@ Server = https://syd.mirror.rackspace.com/archlinux/$repo/os/$arch
 Server = http://ftp.swin.edu.au/archlinux/$repo/os/$arch
 
 # install base
-pacstrap /mnt base linux linux-firmware linux-headers base-devel neovim dhcpcd man-db man-pages texinfo networkmanager grub openssh zsh
+pacstrap /mnt base linux linux-firmware linux-headers base-devel neovim dhcpcd man-db man-pages texinfo networkmanager grub openssh zsh git wget
 
 # set fstab
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -86,13 +86,13 @@ useradd -m -G wheel -s /bin/zsh andy
 passwd andy
 
 EDITOR=nvim visudo
-
 #uncomment %wheel ALL=(ALL) NOPASSWD: ALL
 
 nvim /etc/ssh/ssh_config
 #unhash PasswordAuthentication yes
 
-# local system - remove ssh details
-vim ~/.ssh/known_hosts
-# remove the details for the remote machine
+# Create location for aur packages
+mkdir /usr/aur
+chmod 777 /usr/aur
 
+#reboot and login as user
