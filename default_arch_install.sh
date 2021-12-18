@@ -95,4 +95,23 @@ nvim /etc/ssh/ssh_config
 mkdir /usr/aur
 chmod 777 /usr/aur
 
+# clone dotfiles
+git clone https://github.com/nydasco/.config.git
+
+# oh-my-zsh
+wget --no-check-certificate http://install.ohmyz.sh -O - | sh
+
+cd ~
+rm -R .zshrc.pre-oh-my-zsh
+
+mkdir ~/.config/zsh
+mv ~/.zshrc ~/.config/zsh/zshrc
+ln -s ~/.config/zsh/zshrc ~/.zshrc
+
+git config --global user.email "andy@nydas.co"
+git config --global user.name "Andy Sawyer"
+
+sudo nvim /etc/pacman.conf
+# uncomment Color and add new line ILoveCandy
+
 #reboot and login as user
