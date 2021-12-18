@@ -1,6 +1,5 @@
 sudo pacman -S xorg-server xorg-apps xorg-xinit
-cd /usr/aur && git clone https://aur.archlinux.org/i3-gaps-rounded-git.git
-cd i3-gaps-rounded-git && mkpkg -si
+sudo pacman -S i3-gaps
 
 sudo pacman -S lightdm lightdm-gtk-greeter --needed
 sudo systemctl enable lightdm
@@ -17,3 +16,12 @@ cd polybar && makepkg -si
 
 sudo pacman -S xorg-fonts-misc
 
+sudo pacman -S feh
+
+cd /usr/aur && git clone https://aur.archlinux.org/rofi-dmenu.git
+cd rofi-dmenu && makepkg -si
+
+sudo pacman -S docker docker-compose
+sudo systemctl enable docker
+
+sudo pacman -S htop neofetch conky
