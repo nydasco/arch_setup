@@ -24,6 +24,7 @@ cd rofi-dmenu && makepkg -si
 sudo pacman -S docker docker-compose
 sudo systemctl enable docker
 
-sudo pacman -S htop neofetch conky
+sudo pacman -S htop neofetch conky networkmanager picom
 
-ln -s ~/.config/Xresources ~/.Xresources
+mkdir ~/.config/picom
+cp /etc/xdg/picom.conf ~/.config/picom/picom.conf
