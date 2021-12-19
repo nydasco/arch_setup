@@ -25,3 +25,5 @@ sudo pacman -S docker docker-compose
 sudo systemctl enable docker
 
 sudo pacman -S htop neofetch conky
+
+ln -s ~/.config/Xresources ~/.Xresources
