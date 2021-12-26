@@ -28,3 +28,37 @@ sudo pacman -S htop neofetch conky networkmanager picom
 
 mkdir ~/.config/picom
 cp /etc/xdg/picom.conf ~/.config/picom/picom.conf
+
+mkdir ~/.local/share/fonts/
+
+cp -r ~/.config/fonts/Terminus ~/.local/share/fonts/
+cp -r ~/.config/fonts/MesloLGS ~/.local/share/fonts/
+
+git clone https://github.com/powerline/fonts.git --depth=1
+
+cd fonts && ./install.sh
+
+cd .. && rm -rf fonts
+
+cd /usr/aur
+
+git clone https://aur.archlinux.org/ttf-font-awesome-4.git
+
+cd ttf-font-awesome-4 && makepkg -si
+
+cd ..
+
+git clone https://aur.archlinux.org/nerd-fonts-complete.git
+
+cd nerd-fonts-complete && makepkg -si
+
+cd ~
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+sudo pacman -S nodejs-lts-gallium npm
+
+cd /usr/aur
+
+git clone https://aur.archlinux.org/code-minimap.git
+
+cd code-minimap && makepkg -si
